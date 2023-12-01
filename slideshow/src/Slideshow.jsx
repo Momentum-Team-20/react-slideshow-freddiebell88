@@ -1,18 +1,31 @@
+import { useState } from 'react'
 import filmData from './data/mega-film-data.json'
 
 export function Slideshow() {
-    
+    const [index, setIndex] = useState(0);
+
+    const next = () => {
+      setIndex(index + 1);
+    }
+  
+    const back = () => {
+      setIndex(index - 1);
+    }
     return (
     <>
         <Slide
-            filmTitle={filmData[0].title}
-            filmOriginalTitle={filmData[0].original_title}
-            key={filmData[0].id}
-            releaseDate={filmData[0].release_date}
-            description={filmData[0].description}
-            coverImage={filmData[0].image}
+            filmTitle={filmData[index].title}
+            filmOriginalTitle={filmData[index].original_title}
+            key={filmData[index].id}
+            releaseDate={filmData[index].release_date}
+            description={filmData[index].description}
+            coverImage={filmData[index].image}
         />
-
+        <div className='buttons'>
+            <button>Start Over</button>
+            <button onClick={ back }>Back</button>
+            <button onClick={ next }>Next</button>
+        </div>
     </>
     )
 }
@@ -27,7 +40,7 @@ const Slide = ({ filmTitle, filmOriginalTitle, releaseDate, description, coverIm
             <p>{releaseDate}</p>
             <p>{description}</p>
             <img src={coverImage} alt='Movie Poster'/>
-
         </div>
+        
     )
 }
