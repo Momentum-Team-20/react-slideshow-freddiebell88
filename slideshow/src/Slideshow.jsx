@@ -46,10 +46,10 @@ export function Slideshow() {
 const Slide = ({ filmTitle, filmOriginalTitle, releaseDate, description, coverImage}) => {
     return (
         <div className='slide'>
-            <h1>{filmTitle}</h1>
-            <p>{filmOriginalTitle}</p>
-            <p>{releaseDate}</p>
-            <p>{description}</p>
+            <p className='title text'>{filmTitle}</p>
+            <p className='text'>{filmOriginalTitle}</p>
+            <p className='text'>{releaseDate}</p>
+            <p className='text'>{description}</p>
             <img src={coverImage} alt='Movie Poster'/>
         </div>
         

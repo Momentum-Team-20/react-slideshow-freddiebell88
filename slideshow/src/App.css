@@ -4,8 +4,29 @@
   padding: 2rem;
   text-align: center;
 }
+h1 {
+  padding-bottom: 200px;
+  
+}
+.slide {
+  border: solid 4px lightblue;
+  display: flex;
+  flex-direction: column;
+  /* columns: 1fr 3fr */
+}
+
+.text {
+  /* align-self: flex-end; */
+}
+.title {
+  font-size: xxx-large;
+  align-self: center;
+}
 
 img {
   max-height: 30em;
+  max-width: 20em;
+  align-self: flex-start;
+  flex-direction: row;
 }
 
