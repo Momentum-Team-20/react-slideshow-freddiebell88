@@ -3,18 +3,25 @@ import filmData from './data/mega-film-data.json'
 
 export function Slideshow() {
     const [index, setIndex] = useState(0);
-    const [isFirstSlide, setIsFirstSlide] = useState(true);
-    const [isLastSlide, setIsLastSlide] = useState(false);
+    // const [isFirstSlide, setIsFirstSlide] = useState(true);
+    // const [isLastSlide, setIsLastSlide] = useState(false);
 
     const next = () => {
-        index === 0 ? setIsFirstSlide(true) : setIsFirstSlide(false) 
+        // index === 0 ? setIsFirstSlide(true) : setIsFirstSlide(false) 
         setIndex(index + 1);
+        console.log(index);
     }
   
     const back = () => {
-        const lastSlide = filmData.length - 1
-        index === lastSlide ? setIsLastSlide(true) : setIsLastSlide(false)
+        // const lastSlide = filmData.length - 1
+        // index === lastSlide ? setIsLastSlide(true) : setIsLastSlide(false)
         setIndex(index - 1);
+        console.log(index);
+    }
+
+    const startOver = () => {
+        setIndex(0);
+        console.log(index);
     }
     return (
     <>
@@ -27,15 +34,14 @@ export function Slideshow() {
             coverImage={filmData[index].image}
         />
         <div className='buttons'>
-            <button>Start Over</button>
-            <button disabled={isFirstSlide} onClick={ back }>Back</button>
-            <button onClick={ next }>Next</button>
+            <button disabled={index === 0} onClick={ startOver }>Start Over</button>
+            <button disabled={index === 0} onClick={ back }>Back</button>
+            <button disabled={index === filmData.length - 1} onClick={ next }>Next</button>
         </div>
     </>
     )
 }
 
-// export default Slideshow
 
 const Slide = ({ filmTitle, filmOriginalTitle, releaseDate, description, coverImage}) => {
     return (
