@@ -21,7 +21,7 @@
   grid-row: 1 /2;
   font-size: 35px;
   display: grid;
-  align-self: start;
+  align-self: end;
 }
 
 .original-title{
@@ -43,6 +43,13 @@ img{
   grid-column: 1 / 2;
   grid-row: 2 / 5;
   max-height: 350px;
+  border: 1px solid lightblue;
+  align-self: start;
+  justify-self: center;
 }
 
-
+button{
+  background-color: rgb(5, 80, 106);
+  margin: 10px 2px;
+  border: 1px solid lightblue;
+}
