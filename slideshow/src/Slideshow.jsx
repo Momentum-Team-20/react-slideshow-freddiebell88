@@ -23,6 +23,10 @@ export function Slideshow() {
         setIndex(0);
         console.log(index);
     }
+
+    const last = () => {
+        setIndex(filmData.length - 1)
+    }
     return (
     <>
         <Slide
@@ -37,6 +41,7 @@ export function Slideshow() {
             <button disabled={index === 0} onClick={ startOver }>Start Over</button>
             <button disabled={index === 0} onClick={ back }>Back</button>
             <button disabled={index === filmData.length - 1} onClick={ next }>Next</button>
+            <button disabled={index === filmData.length - 1} onClick={ last }>Last</button>
         </div>
     </>
     )
